@@ -1,44 +1,30 @@
 package name.guolanren.model;
 
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 系统用户
- *
- * @author 郭耀展
+ * @author guolanren
  */
+@TableName(value = "example_sys_user")
+@KeySequence(value = "SEQ_SYS_USER", clazz = String.class)
 public class SysUser implements Serializable {
 
-    private static final long serialVersionUID = 1494806858707788933L;
+    private static final long serialVersionUID = -1238170791719575461L;
 
-    private Long id;
+    @TableId(value = "id", type = IdType.INPUT)
+    private String id;
+
+    @TableField(value = "name")
     private String name;
-    private Date gmtCreate;
-    private Date gmtModified;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
     public String getName() {
@@ -49,4 +35,11 @@ public class SysUser implements Serializable {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "SysUser{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
