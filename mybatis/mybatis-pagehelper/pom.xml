@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>name.guolanren</groupId>
+    <artifactId>mybatis-pagehelper</artifactId>
+    <version>1.0.0</version>
+    <name>mybatis-pagehelper</name>
+    <description>mybatis pagehelper</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -11,15 +16,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>name.guolanren</groupId>
-    <artifactId>swagger2</artifactId>
-    <version>1.0.0</version>
-    <name>swagger2</name>
-    <description>Swagger2 —— 构建API文档</description>
-
     <properties>
         <java.version>1.8</java.version>
-        <swagger2.version>2.9.2</swagger2.version>
+        <mybatis.starter.version>2.0.1</mybatis.starter.version>
+        <mybatis.pagehelper.starter.version>1.2.10</mybatis.pagehelper.starter.version>
     </properties>
 
     <dependencies>
@@ -35,15 +35,21 @@
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger2.version}</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger2.version}</version>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.starter.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${mybatis.pagehelper.starter.version}</version>
         </dependency>
     </dependencies>
 

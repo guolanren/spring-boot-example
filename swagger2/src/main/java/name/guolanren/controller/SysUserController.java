@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * @author guolanren
  */
 @RestController
-@RequestMapping("/sys_users")
+@RequestMapping("/sys_user")
 @Api(value = "SysUser", tags = {"系统用户 模块"})
 public class SysUserController {
 
