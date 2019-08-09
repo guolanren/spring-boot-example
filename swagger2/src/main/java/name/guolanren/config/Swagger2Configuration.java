@@ -34,10 +34,10 @@ public class Swagger2Configuration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("系统用户")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.leayun.bdc.controller"))
+                .apis(RequestHandlerSelectors.basePackage("name.guolanren.controller"))
 //                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
 //                .apis(RequestHandlerSelectors.withMethodAnnotation(Api.class))
-                .paths(PathSelectors.regex("/systemUser.*"))
+                .paths(PathSelectors.regex("/sys_user.*"))
                 .build()
                 .apiInfo(apiInfo())
                 .enable(true);
