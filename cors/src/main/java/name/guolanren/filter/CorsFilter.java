@@ -36,7 +36,6 @@ public class CorsFilter implements Filter {
         Set<String> allowedOrigins = new HashSet(Arrays.asList(ALLOWED_ORIGINS));
         Set<String> allowedMethods = new HashSet(Arrays.asList(ALLOWED_METHODS));
 
-
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String origin = request.getHeader(HttpHeaders.ORIGIN);
