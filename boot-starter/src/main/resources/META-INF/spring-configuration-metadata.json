@@ -1,0 +1,10 @@
+{
+  "properties": [
+    {
+      "name": "boot.starter.msg",
+      "type": "java.lang.String",
+      "defaultValue": "Hello Hell",
+      "description": "this is msg description."
+    }
+  ]
+}
