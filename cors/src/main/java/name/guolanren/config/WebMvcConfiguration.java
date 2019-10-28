@@ -51,7 +51,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         corsConfiguration.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/*", corsConfiguration);
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new CorsFilter(urlBasedCorsConfigurationSource));
         filterRegistrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return filterRegistrationBean;

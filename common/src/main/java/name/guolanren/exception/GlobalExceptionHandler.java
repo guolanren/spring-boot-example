@@ -19,42 +19,42 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler
     public ResultEntity requestHandle(RequestException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.REQUEST_FAILD, e.getMessage());
     }
     @ExceptionHandler
     public ResultEntity InvalidParamHandle(InvalidParamException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.INVALID_PARAM_FAILD, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity IllegalParamHandle(IllegalParamException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.REQUEST_FAILD, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity serverErrorHandle(ServerErrorException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.SERVER_ERROR, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity expiredSessionHandle(ExpiredSessionException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.EXPIRED_SESSION, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity unauthorizedHandle(UnauthorizedException e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.UNAUTHORIZED, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity unknownHandle(Exception e) {
-        LOG.error(e.getMessage());
+        LOG.error(e.getMessage(), e);
         return ResultEntity.faild(ResultCode.UNKNOWN_FAILED, e.getMessage());
     }
 

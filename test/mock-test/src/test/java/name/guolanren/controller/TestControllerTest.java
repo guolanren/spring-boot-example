@@ -43,13 +43,13 @@ public class TestControllerTest {
 
     @Test
     public void testPost() throws Exception {
-        ObjectNode requestBoody = new ObjectMapper().createObjectNode();
-        requestBoody.put("id", 1);
-        requestBoody.put("name", "guolanren");
+        ObjectNode requestBody = new ObjectMapper().createObjectNode();
+        requestBody.put("id", 1);
+        requestBody.put("name", "guolanren");
 
         String result = mockMvc.perform(MockMvcRequestBuilders.post("/post")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(requestBoody.toString()))
+                .content(requestBody.toString()))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.method").value("post"))
                 .andReturn().getResponse().getContentAsString();

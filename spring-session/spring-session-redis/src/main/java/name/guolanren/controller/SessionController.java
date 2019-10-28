@@ -1,0 +1,19 @@
+package name.guolanren.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
+
+/**
+ * @author guolanren
+ */
+@RestController
+public class SessionController {
+
+    @GetMapping("/session")
+    public String hi(HttpSession session) {
+        return "session: " + session.getId();
+    }
+
+}
