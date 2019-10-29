@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-@MapperScan("name.guolanren.dao")
+@MapperScan("name.guolanren.mapper")
 public class MybatisCurdApplication {
 
     public static void main(String[] args) {

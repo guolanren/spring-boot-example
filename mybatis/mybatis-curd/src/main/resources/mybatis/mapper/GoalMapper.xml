@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="name.guolanren.mapper.GoalMapper">
+
+    <sql id="table">
+        goal
+    </sql>
+
+    <sql id="select_columns">
+        id, name
+    </sql>
+
+    <select id="get" parameterType="long" resultType="Goal">
+        SELECT <include refid="select_columns"/>
+        FROM <include refid="table"/>
+        WHERE id = #{id, jdbcType=BIGINT}
+    </select>
+
+</mapper>
