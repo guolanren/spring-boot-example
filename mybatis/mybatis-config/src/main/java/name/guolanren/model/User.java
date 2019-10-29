@@ -1,8 +1,11 @@
 package name.guolanren.model;
 
+import org.apache.ibatis.type.Alias;
+
 /**
  * @author guolanren
  */
+@Alias("user")
 public class User {
 
     private Long id;
