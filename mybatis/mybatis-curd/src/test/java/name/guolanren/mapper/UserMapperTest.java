@@ -13,6 +13,8 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
+
 /**
  * @author guolanren
  */
@@ -30,10 +32,31 @@ public class UserMapperTest {
         User user = new User();
         user.setName("guolanren4");
         user.setAge(26);
+        user.setGid(1L);
 
         Long rows = userMapper.insert(user);
         Assert.assertEquals(1L, rows.longValue());
         Assert.assertEquals(4L, user.getId().longValue());
+    }
+
+    @Test
+    @Transactional
+    @Rollback
+    public void testInsertBatch() {
+        User user1 = new User();
+        user1.setName("guolanren4");
+        user1.setAge(26);
+        user1.setGid(1L);
+
+        User user2 = new User();
+        user2.setName("guolanren5");
+        user2.setAge(27);
+        user2.setGid(1L);
+
+        Long rows = userMapper.insertBatch(Arrays.asList(user1, user2));
+        Assert.assertEquals(2L, rows.longValue());
+        Assert.assertEquals(4L, user1.getId().longValue());
+        Assert.assertEquals(5L, user2.getId().longValue());
     }
 
     @Test
