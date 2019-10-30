@@ -20,9 +20,9 @@
         <!--</constructor>-->
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
-        <association property="goal" column="gid" select="name.guolanren.mapper.GoalMapper.get"/>
-        <collection property="pcs" column="id" select="name.guolanren.mapper.PcMapper.getByBelongTo"/>
-        <collection property="languages" column="id" select="name.guolanren.mapper.LanguageMapper.getByUserId"/>
+        <association property="goal" column="gid" fetchType="eager" select="name.guolanren.mapper.GoalMapper.get"/>
+        <collection property="pcs" column="id" fetchType="lazy" select="name.guolanren.mapper.PcMapper.getByBelongTo"/>
+        <collection property="languages" column="id" fetchType="lazy" select="name.guolanren.mapper.LanguageMapper.getByUserId"/>
     </resultMap>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
@@ -60,4 +60,5 @@
         WHERE id = #{id, jdbcType=BIGINT}
     </select>
 
+    <cache/>
 </mapper>
