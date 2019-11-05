@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `profile` BLOB NOT NULL,
+  PRIMARY KEY (`id`)
+);

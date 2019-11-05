@@ -9,7 +9,7 @@ import java.util.concurrent.Executor;
 @Intercepts({@Signature(
   type= Executor.class,
   method = "update",
-  args = {MappedStatement.class,Object.class})})
+  args = {MappedStatement.class, Object.class})})
 public class ExamplePlugin implements Interceptor {
 
   private Properties properties = new Properties();

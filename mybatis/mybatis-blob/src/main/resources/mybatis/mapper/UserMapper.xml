@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="name.guolanren.mapper.UserMapper">
+
+    <sql id="table">
+        user
+    </sql>
+
+    <sql id="select_columns">
+        id, profile
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO <include refid="table"/> (profile)
+        VALUES (#{profile})
+    </insert>
+
+    <select id="get" parameterType="long" resultType="User">
+        SELECT <include refid="select_columns"/>
+        FROM <include refid="table"/>
+        WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+</mapper>

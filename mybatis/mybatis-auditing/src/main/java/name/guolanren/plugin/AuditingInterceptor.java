@@ -50,10 +50,7 @@ public class AuditingInterceptor implements Interceptor {
 
     @Override
     public Object plugin(Object target) {
-        if (target instanceof Executor) {
-            return Plugin.wrap(target, this);
-        }
-        return target;
+        return Plugin.wrap(target, this);
     }
 
     @Override
