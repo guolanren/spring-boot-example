@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    Long insert(User user);
+    void delete(Long id);
 
     User get(Long id);
 }

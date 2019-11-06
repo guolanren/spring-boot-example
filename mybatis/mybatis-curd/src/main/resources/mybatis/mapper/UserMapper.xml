@@ -55,6 +55,7 @@
             <if test="gid != null">
                 gid = #{gid},
             </if>
+            id = #{id},
         </set>
         WHERE id = #{id}
     </update>
@@ -64,7 +65,7 @@
         FROM <include refid="table"/>
         <where>
             <if test="id != null">
-                id = #{id, jdbcType=BIGINT}
+                AND id = #{id, jdbcType=BIGINT}
             </if>
             <!--<choose>-->
                 <!--<when test="id != null"></when>-->
@@ -77,12 +78,16 @@
     <select id="getVO" parameterType="long" resultMap="vo_map">
         SELECT <include refid="select_columns"/>
         FROM <include refid="table"/>
-        <trim prefix="where" prefixOverrides="and">
+        <trim prefix="where" prefixOverrides="and |or ">
             <if test="id != null ">
                 and id = #{id, jdbcType=BIGINT}
             </if>
         </trim>
     </select>
 
-    <cache/>
+    <cache
+        eviction="LRU"
+        flushInterval="60000"
+        size="1024"
+        readOnly="false"/>
 </mapper>

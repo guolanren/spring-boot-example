@@ -11,14 +11,14 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    Long insert(User sysUser);
+    Long insert(User user);
 
     Long insertBatch(@Param("users") List<User> users);
 
     Long delete(Long id);
 
 
-    Long update(User sysUser);
+    Long update(User user);
 
 
     User get(@Param("id") Long id);

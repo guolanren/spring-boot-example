@@ -187,7 +187,7 @@
 
     <!-- 类型处理器 -->
     <typeHandlers>
-        <typeHandler handler="name.guolanren.typehandler.ExampleTypeHandler"/>
+        <typeHandler handler="name.guolanren.typehandler.ExampleTypeHandler" javaType="" jdbcType=""/>
         <package name="name.guolanren.typehandler"/>
     </typeHandlers>
 
@@ -228,6 +228,11 @@
         <property name="SQL Server" value="sqlserver"/>
         <property name="DB2" value="db2"/>
         <property name="Oracle" value="oracle" />
+        <property name="MySQL" value="mysql" />
+        <property name="PostgreSQL" value="postgresql" />
+        <property name="Derby" value="derby" />
+        <property name="HSQL" value="hsqldb" />
+        <property name="H2" value="h2" />
     </databaseIdProvider>
 
     <!-- 映射器 -->

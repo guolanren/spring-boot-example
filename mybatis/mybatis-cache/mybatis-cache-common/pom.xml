@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>mybatis-blob</artifactId>
+    <artifactId>mybatis-cache-common</artifactId>
     <version>1.0.0</version>
-    <name>mybatis-blob</name>
-    <description>MyBatis Blob</description>
+    <name>mybatis-cache-common</name>
+    <description>MyBatis Cache Common</description>
 
     <properties>
         <java.version>1.8</java.version>
