@@ -19,7 +19,7 @@ public class SqlSessionFactoryUtil {
 
     private SqlSessionFactoryUtil() {}
 
-    public static SqlSessionFactory initSqlSessionFactory() {
+    private static SqlSessionFactory initSqlSessionFactory() {
         if (sqlSessionFactory == null) {
             final ReentrantLock lock = SqlSessionFactoryUtil.lock;
             lock.lock();
