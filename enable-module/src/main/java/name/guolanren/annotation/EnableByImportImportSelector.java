@@ -1,6 +1,6 @@
 package name.guolanren.annotation;
 
-import name.guolanren.config.SomeConfiguration;
+import name.guolanren.service.Server;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -11,6 +11,9 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(SomeConfiguration.class)
-public @interface EnableSth {
+@Import(ServerImportSelector.class)
+public @interface EnableByImportImportSelector {
+
+    Server.Type type();
+
 }
