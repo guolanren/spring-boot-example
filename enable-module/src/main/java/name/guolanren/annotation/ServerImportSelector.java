@@ -13,6 +13,7 @@ import java.util.Map;
  */
 public class ServerImportSelector implements ImportSelector {
 
+    @Override
     public String[] selectImports(AnnotationMetadata annotationMetadata) {
         // 读取 EnableServer 中所有的属性方法，本例中仅有 type() 属性方法
         // 其中 key 为属性方法的名称，value 为属性方法的返回对象

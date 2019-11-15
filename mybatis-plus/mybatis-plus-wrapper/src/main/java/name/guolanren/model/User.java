@@ -10,12 +10,12 @@ import java.io.Serializable;
 /**
  * @author guolanren
  */
-@TableName(value = "example_sys_user")
-public class SysUser implements Serializable {
+@TableName(value = "user")
+public class User implements Serializable {
 
     private static final long serialVersionUID = -1238170791719575461L;
 
-    @TableId(value = "sys_user_id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     @TableField(value = "name")

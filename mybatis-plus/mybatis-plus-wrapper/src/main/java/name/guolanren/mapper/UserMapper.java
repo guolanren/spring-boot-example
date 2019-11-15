@@ -1,10 +1,10 @@
 package name.guolanren.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import name.guolanren.model.SysUser;
+import name.guolanren.model.User;
 
 /**
  * @author guolanren
  */
-public interface SysUserMapper extends BaseMapper<SysUser> {
+public interface UserMapper extends BaseMapper<User> {
 }

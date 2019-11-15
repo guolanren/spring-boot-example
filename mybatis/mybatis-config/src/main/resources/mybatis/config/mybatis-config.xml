@@ -238,6 +238,7 @@
     <!-- 映射器 -->
     <mappers>
         <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <mapper url=""/>
         <mapper class="name.guolanren.mapper.UserMapper"/>
         <package name="name.guolanren.mapper"/>
     </mappers>
