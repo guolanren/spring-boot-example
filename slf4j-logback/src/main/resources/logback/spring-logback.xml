@@ -31,7 +31,7 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
-            <pattern>%d %contextName %-5level [%thread] (%file:%line\)- %logger{128}: %msg%n</pattern>
+            <pattern>%d %contextName %clr(%-5level) [%thread] (%file:%line\)- %clr(%logger{128}): %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -46,7 +46,7 @@
     </root>
 
     <!-- 指定某个包 -->
-    <logger name="com.leayun.bdc.*" level="INFO" additivity="false">
+    <logger name="name.guolanren" level="INFO" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 
