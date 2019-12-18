@@ -1,6 +1,6 @@
 package name.guolanren.filter;
 
-import name.guolanren.exception.VerficationCodeException;
+import name.guolanren.exception.VerificationCodeException;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * @author guolanren
  */
-public class VerficationCodeFilter extends OncePerRequestFilter {
+public class VerificationCodeFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -35,8 +35,7 @@ public class VerficationCodeFilter extends OncePerRequestFilter {
 
         if (StringUtils.isEmpty(requestCode) || StringUtils.isEmpty(savedCode)
                 || !requestCode.equalsIgnoreCase(savedCode)) {
-            throw new VerficationCodeException("验证码无效");
+            throw new VerificationCodeException("验证码无效");
         }
-
     }
 }

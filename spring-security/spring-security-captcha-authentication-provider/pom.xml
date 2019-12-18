@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>spring-security-captcha</artifactId>
+    <artifactId>spring-security-captcha-authentication-provider</artifactId>
     <version>1.0.0</version>
 
     <properties>

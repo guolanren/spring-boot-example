@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-public class SpringSecurityCaptchaApplication {
+public class SpringSecurityCaptchaFilterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityCaptchaApplication.class, args);
+        SpringApplication.run(SpringSecurityCaptchaFilterApplication.class, args);
     }
 
 }
