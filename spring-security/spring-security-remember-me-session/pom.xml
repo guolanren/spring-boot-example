@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>spring-security-remember-me</artifactId>
+    <artifactId>spring-security-remember-me-session</artifactId>
     <version>1.0.0</version>
 
     <properties>

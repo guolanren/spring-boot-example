@@ -32,14 +32,4 @@ public class UserDetailsServiceConfiguration {
         return manager;
     }
 
-    @Bean
-    public UserDetailsService jdbcUserDetailsService(DataSource dataSource) {
-        User.UserBuilder users = User.builder().passwordEncoder(passwordEncoder()::encode);
-
-        JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
-        manager.createUser(users.username("guolanren").password("hahaha").roles("USER").build());
-        manager.createUser(users.username("admin").password("admin").roles("ADMIN").build());
-        return manager;
-    }
-
 }

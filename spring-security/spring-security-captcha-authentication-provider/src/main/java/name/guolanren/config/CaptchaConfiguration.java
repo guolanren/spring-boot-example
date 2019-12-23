@@ -27,6 +27,7 @@ public class CaptchaConfiguration {
         properties.setProperty("kaptcha.image.height", "40");
         properties.setProperty("kaptcha.textproducer.char.string", "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
         properties.setProperty("kaptcha.textproducer.char.length", "4");
+        properties.setProperty("kaptcha.obscurificator.impl", "com.google.code.kaptcha.impl.WaterRipple");
 
         Config config = new Config(properties);
 

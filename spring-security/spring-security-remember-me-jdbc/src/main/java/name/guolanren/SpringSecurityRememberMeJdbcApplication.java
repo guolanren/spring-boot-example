@@ -1,5 +1,6 @@
 package name.guolanren;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,10 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-public class SpringSecurityRememberMeApplication {
+@MapperScan("name.guolanren.dao")
+public class SpringSecurityRememberMeJdbcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityRememberMeApplication.class, args);
+        SpringApplication.run(SpringSecurityRememberMeJdbcApplication.class, args);
     }
 
 }
