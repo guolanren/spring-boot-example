@@ -14,8 +14,8 @@
     <groupId>name.guolanren</groupId>
     <artifactId>data-sharding</artifactId>
     <version>1.0.0</version>
-    <name>data-sharding</name>
-    <description>Sharding Sphere-jdbc 数据分片</description>
+    <name>read-write-separation</name>
+    <description>Sharding Sphere-jdbc 读写分离</description>
 
     <properties>
         <java.version>1.8</java.version>
