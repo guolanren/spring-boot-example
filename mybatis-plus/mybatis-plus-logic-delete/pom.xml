@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>mybatis-plus-crud</artifactId>
+    <artifactId>mybatis-plus-logic-delete</artifactId>
     <version>1.0.0</version>
-    <name>mybatis-plus-crud</name>
-    <description>MyBatis Plus 增删改查</description>
+    <name>mybatis-plus-logic-delete</name>
+    <description>MyBatis Plus 逻辑删除</description>
 
     <properties>
         <java.version>1.8</java.version>

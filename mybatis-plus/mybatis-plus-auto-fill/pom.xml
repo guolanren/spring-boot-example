@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>mybatis-plus-crud</artifactId>
+    <artifactId>mybatis-plus-auto-fill</artifactId>
     <version>1.0.0</version>
-    <name>mybatis-plus-crud</name>
-    <description>MyBatis Plus 增删改查</description>
+    <name>mybatis-plus-auto-fill</name>
+    <description>MyBatis Plus 自动填充</description>
 
     <properties>
         <java.version>1.8</java.version>

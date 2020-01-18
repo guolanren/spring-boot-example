@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `example_user` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `is_deleted` TINYINT NOT NULL,
+  PRIMARY KEY (`id`)
+);
