@@ -13,17 +13,17 @@ public enum ResultCode {
     /**
      * 请求失败
      */
-    REQUEST_FAILD(200, "请求失败"),
+    REQUEST_FAILED(200, "请求失败"),
 
     /**
      * 无效请求参数
      */
-    INVALID_PARAM_FAILD(201, "无效参数"),
+    INVALID_PARAM_FAILED(201, "无效参数"),
 
     /**
      * 非法请求参数
      */
-    ILLEGAL_PARAM_FAILD(202, "非法参数"),
+    ILLEGAL_PARAM_FAILED(202, "非法参数"),
 
     /**
      * 服务器错误
