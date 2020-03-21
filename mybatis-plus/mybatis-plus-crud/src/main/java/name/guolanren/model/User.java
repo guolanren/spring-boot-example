@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author guolanren
  */
 @TableName(value = "example_sys_user")
-public class SysUser implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = -1238170791719575461L;
 
@@ -39,9 +39,10 @@ public class SysUser implements Serializable {
 
     @Override
     public String toString() {
-        return "SysUser{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

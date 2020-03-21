@@ -1,7 +1,7 @@
 package name.guolanren.service.impl;
 
-import name.guolanren.model.SysUser;
-import name.guolanren.service.SysUserService;
+import name.guolanren.model.User;
+import name.guolanren.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,36 +17,36 @@ import static org.junit.Assert.*;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class SysUserServiceImplTest {
+public class UserServiceImplTest {
 
     @Autowired
-    private SysUserService sysUserService;
+    private UserService userService;
 
     @Test
     @Transactional
     @Rollback
     public void testServiceSave() {
-        SysUser sysUser = new SysUser();
-        sysUser.setName("guolanren");
+        User user = new User();
+        user.setName("guolanren");
 
-        boolean success = sysUserService.save(sysUser);
+        boolean success = userService.save(user);
         assertTrue(success);
-        assertEquals(4, sysUser.getId().longValue());
+        assertEquals(4, user.getId().longValue());
 
-        System.out.println(sysUser);
+        System.out.println(user);
     }
 
     @Test
     @Transactional
     @Rollback
     public void testServiceRemoveById() {
-        SysUser beforeDelete = sysUserService.getById(1L);
+        User beforeDelete = userService.getById(1L);
         assertNotNull(beforeDelete);
 
-        boolean success = sysUserService.removeById(1L);
+        boolean success = userService.removeById(1L);
         assertTrue(success);
 
-        SysUser afterDelete = sysUserService.getById(1L);
+        User afterDelete = userService.getById(1L);
         assertNull(afterDelete);
     }
 
@@ -54,24 +54,24 @@ public class SysUserServiceImplTest {
     @Transactional
     @Rollback
     public void testServiceUpdateById() {
-        SysUser beforeUpdate = sysUserService.getById(1L);
+        User beforeUpdate = userService.getById(1L);
         assertNotNull(beforeUpdate);
         assertEquals("甲", beforeUpdate.getName());
 
-        SysUser updateModel = new SysUser();
+        User updateModel = new User();
         updateModel.setId(1L);
         updateModel.setName("guolanren");
-        sysUserService.updateById(updateModel);
+        userService.updateById(updateModel);
 
-        SysUser afterUpdate = sysUserService.getById(1L);
+        User afterUpdate = userService.getById(1L);
         assertNotNull(afterUpdate);
         assertEquals("guolanren", afterUpdate.getName());
     }
 
     @Test
     public void testServiceSelectById() {
-        SysUser sysUser = sysUserService.getById(1L);
-        assertNotNull(sysUser);
-        assertEquals("甲", sysUser.getName());
+        User user = userService.getById(1L);
+        assertNotNull(user);
+        assertEquals("甲", user.getName());
     }
 }

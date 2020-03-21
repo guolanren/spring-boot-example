@@ -1,6 +1,6 @@
 package name.guolanren.mapper;
 
-import name.guolanren.model.SysUser;
+import name.guolanren.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,36 +16,36 @@ import static org.junit.Assert.*;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class SysUserMapperTest {
+public class UserMapperTest {
 
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private UserMapper userMapper;
 
     @Test
     @Transactional
     @Rollback
     public void testMapperInsert() {
-        SysUser sysUser = new SysUser();
-        sysUser.setName("guolanren");
+        User user = new User();
+        user.setName("guolanren");
 
-        int insertedRows = sysUserMapper.insert(sysUser);
+        int insertedRows = userMapper.insert(user);
         assertTrue(insertedRows > 0);
-        assertEquals(4, sysUser.getId().longValue());
+        assertEquals(4, user.getId().longValue());
 
-        System.out.println(sysUser);
+        System.out.println(user);
     }
 
     @Test
     @Transactional
     @Rollback
     public void testMapperDeleteById() {
-        SysUser beforeDelete = sysUserMapper.selectById(1L);
+        User beforeDelete = userMapper.selectById(1L);
         assertNotNull(beforeDelete);
 
-        int deletedRows = sysUserMapper.deleteById(1L);
+        int deletedRows = userMapper.deleteById(1L);
         assertTrue(deletedRows > 0);
 
-        SysUser afterDelete = sysUserMapper.selectById(1L);
+        User afterDelete = userMapper.selectById(1L);
         assertNull(afterDelete);
     }
 
@@ -53,24 +53,24 @@ public class SysUserMapperTest {
     @Transactional
     @Rollback
     public void testMapperUpdateById() {
-        SysUser beforeUpdate = sysUserMapper.selectById(1L);
+        User beforeUpdate = userMapper.selectById(1L);
         assertNotNull(beforeUpdate);
         assertEquals("甲", beforeUpdate.getName());
 
-        SysUser updateModel = new SysUser();
+        User updateModel = new User();
         updateModel.setId(1L);
         updateModel.setName("guolanren");
-        sysUserMapper.updateById(updateModel);
+        userMapper.updateById(updateModel);
 
-        SysUser afterUpdate = sysUserMapper.selectById(1L);
+        User afterUpdate = userMapper.selectById(1L);
         assertNotNull(afterUpdate);
         assertEquals("guolanren", afterUpdate.getName());
     }
 
     @Test
     public void testMapperSelectById() {
-        SysUser sysUser = sysUserMapper.selectById(1L);
-        assertNotNull(sysUser);
-        assertEquals("甲", sysUser.getName());
+        User user = userMapper.selectById(1L);
+        assertNotNull(user);
+        assertEquals("甲", user.getName());
     }
 }
