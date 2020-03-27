@@ -10,7 +10,7 @@
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d %-5level [%thread] (%file:%line\)- %logger{128}: %msg%n</pattern>
+            <pattern>%d %red(%contextName) %clr(%5level) --- [%magenta(%15thread)] %cyan((%class{40}\))  : %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -31,22 +31,22 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
-            <pattern>%d %contextName %clr(%-5level) [%thread] (%file:%line\)- %clr(%logger{128}): %msg%n</pattern>
+            <pattern>%d %red(%contextName) %clr(%5level) --- [%magenta(%15thread)] %cyan((%class{40}\))  : %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
     <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  -->
-    <root level="ERROR">
+    <root level="WARN">
         <appender-ref ref="file"/>
     </root>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="console" />
     </root>
 
     <!-- 指定某个包 -->
-    <logger name="name.guolanren" level="INFO" additivity="false">
+    <logger name="name.guolanren" level="DEBUG" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 
