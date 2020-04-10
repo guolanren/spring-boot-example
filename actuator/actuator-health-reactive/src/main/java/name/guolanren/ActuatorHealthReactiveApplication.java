@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-public class ActuatorApplication {
+public class ActuatorHealthReactiveApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ActuatorApplication.class, args);
+        SpringApplication.run(ActuatorHealthReactiveApplication.class, args);
     }
 
 }
