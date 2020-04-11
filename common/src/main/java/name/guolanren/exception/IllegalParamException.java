@@ -5,8 +5,6 @@ package name.guolanren.exception;
  */
 public class IllegalParamException extends RuntimeException {
 
-    private static final long serialVersionUID = 975102355123055799L;
-
     public IllegalParamException() {
         super();
     }

@@ -1,7 +1,7 @@
 package name.guolanren.exception;
 
-import name.guolanren.http.ResultCode;
-import name.guolanren.http.ResultEntity;
+import name.guolanren.http.response.ResultCode;
+import name.guolanren.http.response.ResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,44 +18,33 @@ public class GlobalExceptionHandler {
     private static final Logger LOG = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler
-    public ResultEntity requestHandle(RequestException e) {
+    public ResultEntity illegalParamHandle(IllegalParamException e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.REQUEST_FAILD, e.getMessage());
-    }
-    @ExceptionHandler
-    public ResultEntity InvalidParamHandle(InvalidParamException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.INVALID_PARAM_FAILD, e.getMessage());
-    }
-
-    @ExceptionHandler
-    public ResultEntity IllegalParamHandle(IllegalParamException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.REQUEST_FAILD, e.getMessage());
+        return ResultEntity.failed(ResultCode.ILLEGAL_PARAM_FAILED, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity serverErrorHandle(ServerErrorException e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.SERVER_ERROR, e.getMessage());
+        return ResultEntity.failed(ResultCode.SERVER_ERROR, e.getMessage());
     }
 
     @ExceptionHandler
-    public ResultEntity expiredSessionHandle(ExpiredSessionException e) {
+    public ResultEntity expiredSessionHandle(SessionInvalidException e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.EXPIRED_SESSION, e.getMessage());
+        return ResultEntity.failed(ResultCode.EXPIRED_SESSION, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity unauthorizedHandle(UnauthorizedException e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.UNAUTHORIZED, e.getMessage());
+        return ResultEntity.failed(ResultCode.UNAUTHORIZED, e.getMessage());
     }
 
     @ExceptionHandler
     public ResultEntity unknownHandle(Exception e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.faild(ResultCode.UNKNOWN_FAILED, e.getMessage());
+        return ResultEntity.failed(ResultCode.UNKNOWN_FAILED, e.getMessage());
     }
 
 }

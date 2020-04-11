@@ -1,4 +1,4 @@
-package name.guolanren.http;
+package name.guolanren.http.response;
 
 /**
  * @author guolanren
@@ -6,44 +6,49 @@ package name.guolanren.http;
 public enum ResultCode {
 
     /**
-     * 响应成功
+     * 请求成功
      */
-    REQUEST_SUCCESS(100, "响应成功"),
+    REQUEST_SUCCESS(1000, "请求成功"),
 
     /**
-     * 请求失败
+     * 非法参数
      */
-    REQUEST_FAILED(200, "请求失败"),
+    ILLEGAL_PARAM_FAILED(2001, "非法参数"),
 
     /**
-     * 无效请求参数
+     * 服务端错误
      */
-    INVALID_PARAM_FAILED(201, "无效参数"),
+    SERVER_ERROR(3000, "服务器错误"),
 
     /**
-     * 非法请求参数
+     * 无效会话
      */
-    ILLEGAL_PARAM_FAILED(202, "非法参数"),
-
-    /**
-     * 服务器错误
-     */
-    SERVER_ERROR(301, "服务器错误"),
-
-    /**
-     * Session失效
-     */
-    EXPIRED_SESSION(401, "SESSION失效"),
+    EXPIRED_SESSION(4001, "无效失效"),
 
     /**
      * 未授权
      */
-    UNAUTHORIZED(402, "未授权"),
+    UNAUTHORIZED(4002, "未授权"),
+
+    /**
+     * 重定向
+     */
+    REDIRECT(5001, "重定向"),
+
+    /**
+     * 转发
+     */
+    FORWARD(5002, "转发"),
+
+    /**
+     * 业务错误
+     */
+    BUSINESS_FAIL(10000, "业务异常"),
 
     /**
      * 未知异常
      */
-    UNKNOWN_FAILED(900, "未知异常");
+    UNKNOWN_FAILED(-1, "未知异常");
 
     private Integer code;
     private String description;
