@@ -70,6 +70,6 @@ public class CommonScheduler {
             @Scheduled(cron = "*/10 * * * * *")
     })
     public void printSchedules() {
-      System.out.printf("print schedules at %s...%n", new Date());
+      System.out.printf("%s print schedules at %s...%n", Thread.currentThread().getName(), new Date());
     }
 }
