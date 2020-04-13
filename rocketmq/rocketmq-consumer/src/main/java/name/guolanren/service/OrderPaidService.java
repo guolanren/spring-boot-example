@@ -16,7 +16,7 @@ public class OrderPaidService {
     private static final Logger logger = LoggerFactory.getLogger(OrderPaidService.class);
 
     @Service
-    @RocketMQMessageListener(topic = "my-topic", consumerGroup = "my-topic-group")
+    @RocketMQMessageListener(topic = "my-topic", consumerGroup = "my-topic-group" /* , accessKey = "AK", secretKey = "SK" */)
     public class StringConsumer implements RocketMQListener<String>{
         @Override
         public void onMessage(String message) {
