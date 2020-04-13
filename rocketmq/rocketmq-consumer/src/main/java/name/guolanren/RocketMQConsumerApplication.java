@@ -10,13 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-public class RocketMQSendApplication implements CommandLineRunner {
+public class RocketMQConsumerApplication implements CommandLineRunner {
 
 	@Autowired
 	private OrderPaidService orderPaidService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(RocketMQSendApplication.class, args);
+		SpringApplication.run(RocketMQConsumerApplication.class, args);
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class RocketMQSendApplication implements CommandLineRunner {
 //			orderPaidService.springMessageSend();
 //			orderPaidService.springMessageConvertAndSend();
 //			orderPaidService.syncSend();
-			orderPaidService.asyncSend();
+//			orderPaidService.asyncSend();
 //			orderPaidService.syncSendOrderly();
 		} finally {
 			orderPaidService.close();
