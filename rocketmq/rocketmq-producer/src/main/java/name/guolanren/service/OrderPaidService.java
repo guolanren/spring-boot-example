@@ -76,7 +76,7 @@ public class OrderPaidService implements Closeable {
     public void asyncSend() {
         while (true) {
             rocketMQTemplate.asyncSend(MY_TOPIC,
-                    new OrderPaidEvent("ORDER_" + ORDER_ID.get(), new BigDecimal("88.00")),
+                    new OrderPaidEvent("ORDER_" + ORDER_ID.getAndIncrement(), new BigDecimal("88.00")),
                     new SendCallback() {
                         @Override
                         public void onSuccess(SendResult result) {
@@ -100,7 +100,7 @@ public class OrderPaidService implements Closeable {
         while (true) {
             rocketMQTemplate.syncSendOrderly(MY_ORDERLY_TOPIC,
                     MessageBuilder
-                            .withPayload(new OrderPaidEvent("ORDER_" + ORDER_ID.get(), new BigDecimal("88.00")))
+                            .withPayload(new OrderPaidEvent("ORDER_" + ORDER_ID.getAndIncrement(), new BigDecimal("88.00")))
                             .build(),
                     "hash-key");
         }
