@@ -5,10 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>name.guolanren</groupId>
-    <artifactId>boot-starter</artifactId>
+    <artifactId>starter</artifactId>
     <version>1.0.0</version>
-    <name>boot-starter</name>
-    <description>boot starter</description>
     <packaging>jar</packaging>
 
     <properties>
