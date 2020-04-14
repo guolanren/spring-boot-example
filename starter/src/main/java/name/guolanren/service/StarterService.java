@@ -3,7 +3,7 @@ package name.guolanren.service;
 /**
  * @author guolanren
  */
-public class BootStarterService {
+public class StarterService {
 
     private String msg;
 

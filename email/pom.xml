@@ -14,8 +14,6 @@
     <groupId>name.guolanren</groupId>
     <artifactId>email</artifactId>
     <version>1.0.0</version>
-    <name>email</name>
-    <description>spring email</description>
 
     <properties>
         <java.version>1.8</java.version>

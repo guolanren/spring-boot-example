@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author guolanren
  */
 @ConfigurationProperties(prefix = "boot.starter")
-public class BootStarterProperties {
+public class StarterProperties {
 
     private String msg = "Hello Hell";
 

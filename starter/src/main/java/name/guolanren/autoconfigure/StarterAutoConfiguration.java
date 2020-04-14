@@ -1,7 +1,8 @@
 package name.guolanren.autoconfigure;
 
-import name.guolanren.service.BootStarterService;
+import name.guolanren.service.StarterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -13,20 +14,21 @@ import org.springframework.context.annotation.Import;
  * @author guolanren
  */
 @Configuration
-@EnableConfigurationProperties(BootStarterProperties.class)
 @ComponentScan("name.guolanren")
+@EnableConfigurationProperties(StarterProperties.class)
+@ConditionalOnExpression("true")
 @Import({})
-public class BootStarterAutoConfiguration {
+public class StarterAutoConfiguration {
 
     @Autowired
-    private BootStarterProperties bootStarterProperties;
+    private StarterProperties starterProperties;
 
     @Bean
-    @ConditionalOnMissingBean(BootStarterService.class)
-    public BootStarterService bootStarterService() {
-        BootStarterService bootStarterService = new BootStarterService();
-        bootStarterService.setMsg(bootStarterProperties.getMsg());
-        return bootStarterService;
+    @ConditionalOnMissingBean(StarterService.class)
+    public StarterService bootStarterService() {
+        StarterService starterService = new StarterService();
+        starterService.setMsg(starterProperties.getMsg());
+        return starterService;
     }
 
 }
