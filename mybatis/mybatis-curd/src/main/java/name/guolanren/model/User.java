@@ -48,4 +48,15 @@ public class User implements Serializable {
     public void setGid(Long gid) {
         this.gid = gid;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", age=").append(age);
+        sb.append(", gid=").append(gid);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -17,9 +17,7 @@ public interface UserMapper {
 
     Long delete(Long id);
 
-
     Long update(User user);
-
 
     User get(@Param("id") Long id);
 
