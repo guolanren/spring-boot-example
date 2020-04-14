@@ -1,6 +1,6 @@
 package name.guolanren.controller;
 
-import name.guolanren.entity.User;
+import name.guolanren.model.User;
 import name.guolanren.repository.UserQueryByExampleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

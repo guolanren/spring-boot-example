@@ -1,4 +1,4 @@
-package name.guolanren.entity.auditing;
+package name.guolanren.model.auditing;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

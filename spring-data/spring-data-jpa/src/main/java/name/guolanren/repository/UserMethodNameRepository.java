@@ -1,6 +1,6 @@
 package name.guolanren.repository;
 
-import name.guolanren.entity.User;
+import name.guolanren.model.User;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;

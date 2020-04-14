@@ -1,6 +1,6 @@
 package name.guolanren.controller;
 
-import name.guolanren.entity.specification.UserParam;
+import name.guolanren.model.specification.UserParam;
 import name.guolanren.repository.UserJpaSpecificationRepository;
 import name.guolanren.specification.factory.SpecificationFactory;
 import org.springframework.beans.factory.annotation.Autowired;

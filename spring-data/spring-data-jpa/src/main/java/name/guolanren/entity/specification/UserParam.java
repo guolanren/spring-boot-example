@@ -1,4 +1,4 @@
-package name.guolanren.entity.specification;
+package name.guolanren.model.specification;
 
 import java.util.Date;
 

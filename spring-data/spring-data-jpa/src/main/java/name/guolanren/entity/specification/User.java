@@ -1,4 +1,4 @@
-package name.guolanren.entity.specification;
+package name.guolanren.model.specification;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.Fetch;

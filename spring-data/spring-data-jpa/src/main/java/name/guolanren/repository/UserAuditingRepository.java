@@ -1,6 +1,6 @@
 package name.guolanren.repository;
 
-import name.guolanren.entity.auditing.User;
+import name.guolanren.model.auditing.User;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
 /**

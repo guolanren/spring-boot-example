@@ -1,6 +1,6 @@
 package name.guolanren.controller;
 
-import name.guolanren.entity.auditing.User;
+import name.guolanren.model.auditing.User;
 import name.guolanren.repository.UserAuditingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

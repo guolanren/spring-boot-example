@@ -1,4 +1,4 @@
-package name.guolanren.entity.specification;
+package name.guolanren.model.specification;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

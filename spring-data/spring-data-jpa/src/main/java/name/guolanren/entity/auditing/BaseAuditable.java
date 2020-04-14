@@ -1,4 +1,4 @@
-package name.guolanren.entity.auditing;
+package name.guolanren.model.auditing;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,4 +1,4 @@
-package name.guolanren.entity;
+package name.guolanren.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
