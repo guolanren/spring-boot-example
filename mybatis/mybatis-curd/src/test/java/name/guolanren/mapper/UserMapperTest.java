@@ -100,4 +100,5 @@ public class UserMapperTest {
         Assert.assertEquals(2, userVO.getPcs().size());
         Assert.assertEquals(3, userVO.getLanguages().size());
     }
+
 }

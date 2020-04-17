@@ -85,9 +85,9 @@
         </trim>
     </select>
 
-    <cache
-        eviction="LRU"
-        flushInterval="60000"
-        size="1024"
-        readOnly="false"/>
+    <!--<cache-->
+        <!--eviction="LRU"-->
+        <!--flushInterval="60000"-->
+        <!--size="1024"-->
+        <!--readOnly="false"/>-->
 </mapper>
