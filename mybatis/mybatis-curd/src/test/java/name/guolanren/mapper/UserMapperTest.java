@@ -1,7 +1,5 @@
 package name.guolanren.mapper;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import name.guolanren.model.User;
 import name.guolanren.model.UserVO;
 import org.junit.Test;
