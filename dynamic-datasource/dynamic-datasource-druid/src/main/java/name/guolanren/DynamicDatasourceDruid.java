@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("name.guolanren.mapper")
-public class DynamicDatasourceMultiApplication {
+public class DynamicDatasourceDruid {
 
     public static void main(String[] args) {
-        SpringApplication.run(DynamicDatasourceMultiApplication.class, args);
+        SpringApplication.run(DynamicDatasourceDruid.class, args);
     }
 
 }
