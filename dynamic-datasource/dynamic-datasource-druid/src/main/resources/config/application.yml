@@ -138,8 +138,3 @@ spring:
             # public-key:
 # 生成 publickey 和密码
 # java -cp druid-1.1.10.jar com.alibaba.druid.filter.config.ConfigTools youpassword
-
-# mybatis
-mybatis:
-  config-location: classpath:mybatis/config/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml

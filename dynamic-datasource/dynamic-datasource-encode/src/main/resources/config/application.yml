@@ -1,0 +1,24 @@
+# dynamic-datasource
+spring:
+  datasource:
+    dynamic:
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIxCGN5cLUnXmwdMRkPJo8eFqTExbx4Mq4/k+OUbXC4Y0uqrfYVd2j+H0x1o0f/8FQpOzykzjrBVjMW6KDL2pfsCAwEAAQ==
+      datasource:
+        master:
+          username: ENC(Tix1tCnfoI3Z2sbKzgdpJr2PDVFzJhUlXs5yqTWT0H4JY946KaIxdcCr1CL12Ax8xNflrGxjkLe4z5Q6NGRa/w==)
+          password: ENC(E5PgR4QR+ZEJ6o0hgTpSUl6u9TXLUI8ILnC61R/77wvOQUHeNBGON2sGOYLLTlQsApITjDP8+VHJtFdhvr8DxA==)
+          driver-class-name: com.mysql.jdbc.Driver
+          url:
+        # slave组下有两个子库slave_1,slave_2
+        slave_1:
+          username: ENC(Tix1tCnfoI3Z2sbKzgdpJr2PDVFzJhUlXs5yqTWT0H4JY946KaIxdcCr1CL12Ax8xNflrGxjkLe4z5Q6NGRa/w==)
+          password: ENC(E5PgR4QR+ZEJ6o0hgTpSUl6u9TXLUI8ILnC61R/77wvOQUHeNBGON2sGOYLLTlQsApITjDP8+VHJtFdhvr8DxA==)
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/slave1?useUnicode=true&characterEncoding=utf-8&useSSL=true
+        slave_2:
+         username: ENC(Tix1tCnfoI3Z2sbKzgdpJr2PDVFzJhUlXs5yqTWT0H4JY946KaIxdcCr1CL12Ax8xNflrGxjkLe4z5Q6NGRa/w==)
+         password: ENC(E5PgR4QR+ZEJ6o0hgTpSUl6u9TXLUI8ILnC61R/77wvOQUHeNBGON2sGOYLLTlQsApITjDP8+VHJtFdhvr8DxA==)
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/slave2?useUnicode=true&characterEncoding=utf-8&useSSL=true

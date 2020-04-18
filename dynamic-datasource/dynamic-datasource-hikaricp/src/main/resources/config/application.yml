@@ -1,0 +1,55 @@
+spring:
+  # dynamic-datasource
+  datasource:
+    dynamic:
+      # 全局hikariCP参数，所有值和默认保持一致。(现已支持的参数如下,不清楚含义不要乱设置)
+#      hikari:
+#        catalog:
+#        connection-timeout:
+#        validation-timeout:
+#        idle-timeout:
+#        leak-detection-threshold:
+#        max-lifetime:
+#        max-pool-size:
+#        min-idle:
+#        initialization-fail-timeout:
+#        connection-init-sql:
+#        connection-test-query:
+#        dataSource-class-name:
+#        dataSource-jndi-name:
+#        schema:
+#        transaction-isolation-name:
+#        is-auto-commit:
+#        is-read-only:
+#        is-isolate-internal-queries:
+#        is-register-mbeans:
+#        is-allow-pool-suspension:
+#        # 以下属性仅为演示（默认不会引入）
+#        data-source-properties:
+#          serverTimezone: Asia/Shanghai
+#          characterEncoding: utf-8
+#          useUnicode: true
+#          useSSL: false
+#          autoReconnect: true
+#          cachePrepStmts: true
+#          prepStmtCacheSize: 250
+#          prepStmtCacheSqlLimit: 2048
+#          useServerPrepStmts: true
+#          useLocalSessionState: true
+#          rewriteBatchedStatements: true
+#          cacheResultSetMetadata: true
+#          cacheServerConfiguration: true
+#          elideSetAutoCommits: true
+#          maintainTimeStats: false
+#          allowPublicKeyRetrieval: true
+#        health-check-properties:
+      datasource:
+        master:
+          username: ***
+          password: ***
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/master?useUnicode=true&characterEncoding=utf-8&useSSL=true
+          # 以下参数针对每个库可以重新设置hikari参数
+#          hikari:
+#            max-pool-size:
+#            idle-timeout:
