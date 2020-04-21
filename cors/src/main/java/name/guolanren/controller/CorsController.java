@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author guolanren
- * @date 2019-03-25
  */
 @RestController
 // CORS方式二
