@@ -1,50 +1,17 @@
-# fastjson
+# Spring Boot Example FastJson
 
-## 概述
+### releae note
 
-fastjson 概述...
+### issue
 
-## 2019
+- String 接收 RequestBody 参数，字段乱序
 
-------
+  使用 **FastJsonHttpMessageConverter** 作为 **HttpMessageConverter** 时，**Controller** 以 **String** 接收 **Request Body**。由于 **ContentType** 为 **application/json;charset=UTF-8**，消息转换器先反序列化了 **Body**，传给 **Controller** 参数时则再次序列化，由于 **fastjson** 的默认策略，导致 **json** 里的字段乱序。
 
-### 06
+  在定义 **FastJsonHttpMessageConverter** 时，设置一下 **Features** 即可解决问题：
 
-------
+  ```java
+  // 按原始的顺序排序
+  fastJsonConfig.setFeatures(Feature.OrderedField);
+  ```
 
-#### fastjson替换jackson (2019-06-17)
-
-在**Spring Boot**中，默认的**json**框架是**jackson**。因为项目需要，统一采用**fastjson**。
-
-根据官方[wiki](https://github.com/alibaba/fastjson/wiki/%E5%9C%A8-Spring-%E4%B8%AD%E9%9B%86%E6%88%90-Fastjson#%E7%BC%96%E7%A8%8B%E5%BC%8F)介绍，替换仅需配置自定义的**MessageConverters**。
-
-```java
-@Configuration
-public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
-        //自定义配置...
-        //FastJsonConfig config = new FastJsonConfig();
-        //config.set ...
-        //converter.setFastJsonConfig(config);
-        converters.add(0, converter);
-    }
-}
-```
-
-------
-
-#### 'Content-Type' cannot contain wildcard type '*' (2019-06-17)
-
-高版本**fastjson**中的**supportedMediaTypes**为**MediaType.ALL(\*/\*)**导致序列化异常。通过配置**FastJsonHttpMessageConverter**时，设置**supportedMediaTypes**。
-
-```java
-List<MediaType> supportedMediaTypes = new ArrayList<>();
-supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-fastConverter.setSupportedMediaTypes(supportedMediaTypes);
-```
-
-------
-
-### 参考

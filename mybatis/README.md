@@ -1,4 +1,4 @@
-# mybatis
+# Spring Boot Example MyBatis
 
 ## mybatis-curd
 
