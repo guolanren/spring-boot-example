@@ -24,27 +24,10 @@ public class ResultEntity<T> {
         return result;
     }
 
-    public static <T> ResultEntity<T> failed(ResultCode code, T data) {
-        ResultEntity<T> result = new ResultEntity();
-        result.setErrCode(code.getCode());
-        result.setErrMsg(code.getDescription());
-        result.setData(data);
-        return result;
-    }
-
-    public static ResultEntity redirect(String url) {
-        ResultEntity<String> result = new ResultEntity();
-        result.setErrCode(ResultCode.REDIRECT.getCode());
-        result.setErrMsg(ResultCode.REDIRECT.getDescription());
-        result.setData(url);
-        return result;
-    }
-
-    public static ResultEntity forward(String path) {
-        ResultEntity<String> result = new ResultEntity();
-        result.setErrCode(ResultCode.FORWARD.getCode());
-        result.setErrMsg(ResultCode.FORWARD.getDescription());
-        result.setData(path);
+    public static ResultEntity failed(Integer errCode, String errMsg) {
+        ResultEntity result = new ResultEntity();
+        result.setErrCode(errCode);
+        result.setErrMsg(errMsg);
         return result;
     }
 
