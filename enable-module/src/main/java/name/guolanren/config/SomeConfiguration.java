@@ -1,17 +1,17 @@
 package name.guolanren.config;
 
+import name.guolanren.service.HttpServer;
+import name.guolanren.service.Server;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author guolanren
  */
-@Configuration
 public class SomeConfiguration {
 
     @Bean
-    public String sth() {
-        return "Hello, World";
+    public Server httpServer() {
+        return new HttpServer();
     }
 
 }
