@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author guolanren
  */
 @SpringBootApplication
-public class WebSocketApplication {
+public class WebSocketHandlerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebSocketApplication.class, args);
+        SpringApplication.run(WebSocketHandlerApplication.class, args);
     }
 }
