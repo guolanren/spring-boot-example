@@ -5,44 +5,20 @@ import name.guolanren.http.response.ResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * @author guolanren
  */
-@RestController
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler
-    public ResultEntity illegalParamHandle(IllegalParamException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.failed(ResultCode.ILLEGAL_PARAM_FAILED, e.getMessage());
-    }
-
-    @ExceptionHandler
-    public ResultEntity serverErrorHandle(ServerErrorException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.failed(ResultCode.SERVER_ERROR, e.getMessage());
-    }
-
-    @ExceptionHandler
-    public ResultEntity expiredSessionHandle(SessionInvalidException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.failed(ResultCode.EXPIRED_SESSION, e.getMessage());
-    }
-
-    @ExceptionHandler
-    public ResultEntity unauthorizedHandle(UnauthorizedException e) {
-        LOG.error(e.getMessage(), e);
-        return ResultEntity.failed(ResultCode.UNAUTHORIZED, e.getMessage());
-    }
-
-    @ExceptionHandler
     public ResultEntity unknownHandle(Exception e) {
         LOG.error(e.getMessage(), e);
-        return ResultEntity.failed(ResultCode.UNKNOWN_FAILED, e.getMessage());
+        return ResultEntity.failed(ResultCode.UNKNOWN_FAILED.getCode(), e.getMessage());
     }
 
 }
