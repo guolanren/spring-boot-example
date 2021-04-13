@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <mybatis.starter.version>2.0.1</mybatis.starter.version>
         <dynamic-datasouce.starter.version>3.0.0</dynamic-datasouce.starter.version>
         <druid.stater.verison>1.1.21</druid.stater.verison>
