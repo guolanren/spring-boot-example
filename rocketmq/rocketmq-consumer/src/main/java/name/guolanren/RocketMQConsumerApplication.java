@@ -21,14 +21,10 @@ public class RocketMQConsumerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		try {
 //			orderPaidService.springMessageSend();
 //			orderPaidService.springMessageConvertAndSend();
 //			orderPaidService.syncSend();
 //			orderPaidService.asyncSend();
 //			orderPaidService.syncSendOrderly();
-		} finally {
-			orderPaidService.close();
-		}
 	}
 }
