@@ -11,7 +11,7 @@
     <description>MyBatis 非 SpringBoot 环境</description>
 
     <properties>
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <mybatis.version>3.5.1</mybatis.version>
     </properties>
 
